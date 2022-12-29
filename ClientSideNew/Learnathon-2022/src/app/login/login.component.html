@@ -1,0 +1,31 @@
+<div class="heightwidth container border">
+    <div class="Header m-3 text-center">
+        <h3>Log in</h3>
+    </div>
+    <div class="registration-form">
+
+        <form [formGroup]="LoginForm">
+            <div class="form-group">
+                <input type="text" formControlName="userName" class="form-control item mt-3" id="username" placeholder="Username">
+                <div class="text text-danger mt-1" *ngIf="!LoginForm.controls['userName'].valid && LoginForm.controls['userName'].touched">
+                    Username is required
+                </div>
+                <span *ngIf=""></span>
+            </div>
+            
+            
+
+            <div class="form-group">
+                <input type="password" formControlName="password" class="form-control item mt-3" id="password" placeholder="Password">
+                <div class="text text-danger mt-1" *ngIf="LoginForm.controls['password'].errors && LoginForm.controls['password'].touched">
+                    <div *ngIf="LoginForm.controls['password'].errors['required']">Password is Required</div>
+                </div>
+            </div>
+            
+            <div class="form-group text-center mt-3 mb-3">
+                <button type="button" (click)="OnSubmit()" class="btn btn-primary">Log in</button><br>
+                Don't have an account? <a routerLink="/signup">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</div>

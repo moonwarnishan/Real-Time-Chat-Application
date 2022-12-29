@@ -1,0 +1,37 @@
+<div class="heightwidth container border">
+    <div class="Header m-3 text-center">
+        <h3>Update</h3>
+    </div>
+    <div class="registration-form">
+
+        <form [formGroup]="UpdateForm" >
+            <div class="form-group">
+                <input type="text"  formControlName="UserName" readonly class="form-control item mt-3" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="Email" class="form-control item mt-3" id="email" placeholder="Email">
+                <div class="text text-danger mt-1" *ngIf="UpdateForm.controls['Email'].errors && UpdateForm.controls['Email'].touched">
+                    <div *ngIf="UpdateForm.controls['Email'].errors['required']"> Email is Required</div>
+                    <div *ngIf="UpdateForm.controls['Email'].errors['pattern']"> Please Enter Valid Email</div>
+                </div>
+                
+            </div>
+            <div class="form-group">
+                <input type="date" formControlName="DateOfBirth" class="form-control item mt-3" id="birth-date" placeholder="Birth Date">
+                <div class="text text-danger mt-1" *ngIf="UpdateForm.controls['DateOfBirth'].errors && UpdateForm.controls['DateOfBirth'].touched">
+                    <div *ngIf="UpdateForm.controls['DateOfBirth'].errors['required']"> Date of Birth is Required </div>
+                    <div *ngIf="!UpdateForm.controls['DateOfBirth'].errors['required']">Age Must be 18+</div>
+                </div>
+            </div>
+
+            <div class="form-group text-center mt-3 mb-3 row">
+                <div class="col">
+                    <button type="button" (click)="UserList()" class="btn btn-danger">Cancel</button>
+                </div>
+                <div class="col">
+                    <button type="button" (click)="OnSubmit()" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

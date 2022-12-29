@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    
+      <table class="table table-striped text-center">
+          <thead>
+          <tr>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let row of rows|paginate: { itemsPerPage: 5, currentPage: p, totalItems: total }; index as i">
+            <td>
+              {{ row?.userName | titlecase }}
+            </td>
+            <td>{{ row?.email }}</td>
+            <td>
+              <div class="btn btn-primary m-1"  >Message</div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+  </div>

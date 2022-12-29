@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Models",
+    "\\Properties",
+    "\\Services",
+    "\\Validator"
+  ],
+  "SelectedNode": "\\Validator\\MinimumAge.cs",
+  "PreviewInSolutionExplorer": false
+}

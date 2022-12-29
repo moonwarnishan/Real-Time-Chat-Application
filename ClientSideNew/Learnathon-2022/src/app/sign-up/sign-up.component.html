@@ -1,0 +1,63 @@
+<div class="heightwidth container border">
+    <div class="Header m-3 text-center">
+        <h3>Sign Up</h3>
+    </div>
+    <div class="registration-form">
+
+        <form [formGroup]="RForm">
+            <div class="form-group">
+                <input type="text" formControlName="UserName" class="form-control item mt-3" id="username" placeholder="Username">
+                <div class="text text-danger mt-1" *ngIf="!RForm.controls['UserName'].valid && RForm.controls['UserName'].touched">
+                    Username is required
+                </div>
+                <span *ngIf=""></span>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="Email" class="form-control item mt-3" id="email" placeholder="Email">
+                <div class="text text-danger mt-1" *ngIf="RForm.controls['Email'].errors && RForm.controls['Email'].touched">
+                    <div *ngIf="RForm.controls['Email'].errors['required']"> Email is Required</div>
+                    <div *ngIf="RForm.controls['Email'].errors['pattern']"> Please Enter Valid Email</div>
+                </div>
+                
+            </div>
+            <div class="form-group">
+                <input type="date" formControlName="DateOfBirth" class="form-control item mt-3" id="birth-date" placeholder="Birth Date">
+                <div class="text text-danger mt-1" *ngIf="RForm.controls['DateOfBirth'].errors && RForm.controls['DateOfBirth'].touched">
+                    <div *ngIf="RForm.controls['DateOfBirth'].errors['required']"> Date of Birth is Required </div>
+                    <div *ngIf="!RForm.controls['DateOfBirth'].errors['required']">Age Must be 18+</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="password" formControlName="Password" class="form-control item mt-3" id="password" placeholder="Password">
+                <div class="text text-danger mt-1" *ngIf="RForm.controls['Password'].errors && RForm.controls['Password'].touched">
+                    <div *ngIf="RForm.controls['Password'].errors['required']">Password is Required</div>
+                    <div *ngIf="RForm.controls['Password'].errors['pattern']">
+                        password must contain
+                        <ul>
+                            <li>at least one number</li>
+                            <li>at least one uppercase letter</li>
+                            <li>at least one loewercase letter</li>
+                            <li>at lease one special character</li>
+                            <li>minimum length 8</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="ConfirmPassword" class="form-control item mt-3" id="ConfirmPassword" placeholder="Confirm Password">
+                <div class="text text-danger mt-1" *ngIf="RForm.controls['ConfirmPassword'].errors && RForm.controls['ConfirmPassword'].touched">
+                    <div *ngIf="RForm.controls['ConfirmPassword'].errors['required']"> Confirm Password is Required</div>
+                    <div *ngIf="RForm.controls['ConfirmPassword'].errors['mustMatch']">
+                        password not matched
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-center mt-3 mb-3">
+                <button type="button" (click)="OnSubmit()" class="btn btn-primary">Sign Up</button><br>
+                Already have an account? <a routerLink="/login">Login</a>
+            </div>
+        </form>
+    </div>
+</div>

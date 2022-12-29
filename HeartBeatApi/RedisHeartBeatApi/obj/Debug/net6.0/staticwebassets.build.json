@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "3u5RtKZYuAlzIs+8NKoPJzNdDqdfdoiFPpvzbxIbUeo=",
+  "Source": "RedisHeartBeatApi",
+  "BasePath": "_content/RedisHeartBeatApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
